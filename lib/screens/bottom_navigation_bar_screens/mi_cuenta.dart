@@ -18,10 +18,17 @@ class _MiCuentaState extends State<MiCuenta> {
     final user = UserPreferences.myUser;
 
     return Scaffold(
-      appBar: buildAppBar(context),
+      appBar: AppBar(
+        title: Text('Mi cuenta'),
+        centerTitle: true,
+        backgroundColor: Colors.grey.shade800,
+      ),
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
+          const SizedBox(
+            height: 25,
+          ),
           ProfileWidget(
             imagePath: user.imagePath,
             onClicked: () {
@@ -36,6 +43,10 @@ class _MiCuentaState extends State<MiCuenta> {
             height: 60,
           ),
           buildAbout(user),
+          const SizedBox(
+            height: 70,
+          ),
+          buildLogOffButton(),
         ],
       ),
     );
@@ -75,3 +86,13 @@ class _MiCuentaState extends State<MiCuenta> {
         ),
       );
 }
+
+Widget buildLogOffButton() => Container(
+      padding: EdgeInsets.fromLTRB(180, 10, 180, 30),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            minimumSize: Size(100, 40), primary: Colors.cyan.shade700),
+        onPressed: () {},
+        child: Text('Cerrar sesión'),
+      ),
+    );

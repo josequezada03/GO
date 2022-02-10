@@ -12,10 +12,15 @@ class _MensajeriaState extends State<Mensajeria> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(),
         title: Text('Mensajeria'),
         centerTitle: true,
-        backgroundColor: Colors.cyan.shade700,
+        backgroundColor: Colors.grey.shade800,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search),
+          ),
+        ],
       ),
       body: Center(
         child: Text(

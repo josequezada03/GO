@@ -23,6 +23,9 @@ class _EditarMiCuentaState extends State<EditarMiCuenta> {
         padding: EdgeInsets.symmetric(horizontal: 32),
         physics: BouncingScrollPhysics(),
         children: [
+          SizedBox(
+            height: 25,
+          ),
           ProfileWidget(
             imagePath: user.imagePath,
             isEdit: true,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/ayuda.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/editar_mi_cuenta.dart';
+import 'package:gp_app/screens/bottom_navigation_bar_screens/inicio.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/mensajeria.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/mi_cuenta.dart';
 import 'package:gp_app/utils/user_preferences.dart';
@@ -17,6 +18,7 @@ class _homepageState extends State<homepage> {
 
   int currentIndex = 0;
   final screens = [
+    Inicio(),
     MiCuenta(),
     Mensajeria(),
     Ayuda(),
@@ -42,8 +44,13 @@ class _homepageState extends State<homepage> {
         children: screens,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.cyan.shade600,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.cyan.shade700,
         items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Inicio',
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
             label: 'Mi cuenta',
@@ -59,6 +66,7 @@ class _homepageState extends State<homepage> {
         ],
         currentIndex: currentIndex,
         selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white70,
         onTap: (index) => setState(() => currentIndex = index),
       ),
     );

@@ -12,10 +12,9 @@ class _AyudaState extends State<Ayuda> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(),
         title: Text('Ayuda'),
         centerTitle: true,
-        backgroundColor: Colors.cyan.shade700,
+        backgroundColor: Colors.grey.shade800,
       ),
       body: Center(
         child: Text(
