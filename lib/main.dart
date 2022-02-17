@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gp_app/screens/bottom_navigation_bar_screens/inicio.dart';
 import 'package:gp_app/screens/homepage.dart';
 import 'package:gp_app/screens/login_page.dart';
 import 'package:gp_app/screens/prueba.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.black,
       ),
-      home: homepage(
+      home: LogIn(
           //key: UniqueKey(),
           //title: ('Titulo prueba'),
           ),

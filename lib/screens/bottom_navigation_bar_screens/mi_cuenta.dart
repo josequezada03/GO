@@ -44,7 +44,7 @@ class _MiCuentaState extends State<MiCuenta> {
           ),
           buildAbout(user),
           const SizedBox(
-            height: 70,
+            height: 10,
           ),
           buildLogOffButton(),
         ],
@@ -88,7 +88,7 @@ class _MiCuentaState extends State<MiCuenta> {
 }
 
 Widget buildLogOffButton() => Container(
-      padding: EdgeInsets.fromLTRB(180, 10, 180, 30),
+      padding: EdgeInsets.fromLTRB(180, 10, 180, 10),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             minimumSize: Size(100, 40), primary: Colors.cyan.shade700),
