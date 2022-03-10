@@ -5,10 +5,10 @@ AppBar buildAppBar(BuildContext context) {
     centerTitle: true,
     leading: BackButton(),
     elevation: 0,
-    backgroundColor: Colors.grey.shade800,
+    backgroundColor: Colors.cyan.shade700,
     title: Text(
       'Mi cuenta',
-      style: TextStyle(color: Colors.lightGreen.shade600),
+      style: TextStyle(color: Colors.white),
     ),
   );
 }

@@ -30,12 +30,17 @@ class _LogInState extends State<LogIn> {
             key: formkey,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             child: Padding(
-              padding: const EdgeInsets.all(60.0),
+              padding: const EdgeInsets.all(10.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Image.asset('oriente_trans.png'),
+                  Container(
+                      // margin: EdgeInsets.symmetric(horizontal: 110.0, vertical:110),
+                      margin: EdgeInsets.fromLTRB(150, 30, 150, 0),
+                      child: Image.asset(
+                        'Orient.png',
+                      )),
                   SizedBox(height: 35),
                   TextFormField(
                     style: TextStyle(
@@ -58,13 +63,13 @@ class _LogInState extends State<LogIn> {
                     style: TextStyle(
                         color: Colors.white, decorationColor: Colors.white),
                     decoration: InputDecoration(
-                      labelText: "Contrazeña",
+                      labelText: "Contraseña",
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'Favor de ingresar su contrazeña';
+                        return 'Favor de ingresar su contraseña';
                       } else if (value.length < 6) {
-                        return 'Contrazeña debe de tener mas de 6 caracteres';
+                        return 'Contraseña debe de tener mas de 6 caracteres';
                       } else {
                         return null;
                       }
@@ -73,7 +78,7 @@ class _LogInState extends State<LogIn> {
                   SizedBox(height: 20),
                   Center(
                     child: Text(
-                      "¿Olvido su Contrazeña?",
+                      "¿Olvidó su Contraseña?",
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white),
                     ),

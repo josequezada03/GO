@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widget/completed_list_widget.dart';
+
 class Historial extends StatefulWidget {
   const Historial({Key? key}) : super(key: key);
 
@@ -11,14 +13,7 @@ class _HistorialState extends State<Historial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Center(
-          child: Text(
-            'Historial',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
+      body: CompletedListWidget(),
     );
   }
 }

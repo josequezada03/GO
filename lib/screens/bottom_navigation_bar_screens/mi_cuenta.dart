@@ -1,6 +1,9 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:gp_app/model/user.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/editar_mi_cuenta.dart';
+import 'package:gp_app/screens/login_page.dart';
 import 'package:gp_app/utils/user_preferences.dart';
 import 'package:gp_app/widget/appbar_widget.dart';
 import 'package:gp_app/widget/profile_widget.dart';
@@ -46,7 +49,7 @@ class _MiCuentaState extends State<MiCuenta> {
           const SizedBox(
             height: 10,
           ),
-          buildLogOffButton(),
+          buildLogOffButton(context),
         ],
       ),
     );
@@ -87,12 +90,42 @@ class _MiCuentaState extends State<MiCuenta> {
       );
 }
 
-Widget buildLogOffButton() => Container(
+Widget buildLogOffButton(BuildContext context) => Container(
       padding: EdgeInsets.fromLTRB(180, 10, 180, 10),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             minimumSize: Size(100, 40), primary: Colors.cyan.shade700),
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (context) => AlertDialog(
+              title: Text('Cerrar Sesión '),
+              content: Text('¿Estas seguro que deseas cerrar la sesión?'),
+              actions: [
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  child: Text('Si'),
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LogIn()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: Size(95, 40), primary: Colors.cyan.shade700),
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  child: Text('No'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: Size(50, 40), primary: Colors.cyan.shade700),
+                ),
+              ],
+            ),
+          );
+        },
         child: Text('Cerrar sesión'),
       ),
     );
