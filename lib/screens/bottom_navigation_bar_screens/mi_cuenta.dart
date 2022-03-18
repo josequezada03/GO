@@ -43,7 +43,17 @@ class _MiCuentaState extends State<MiCuenta> {
           const SizedBox(height: 24),
           buildName(user),
           const SizedBox(
-            height: 60,
+            height: 20,
+          ),
+          Divider(
+            height: 10,
+            thickness: 1,
+            indent: 20,
+            endIndent: 20,
+            color: Colors.cyan.shade700,
+          ),
+          const SizedBox(
+            height: 25,
           ),
           buildAbout(user),
           const SizedBox(

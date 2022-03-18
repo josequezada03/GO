@@ -30,11 +30,13 @@ class _MensajeriaState extends State<Mensajeria> {
             final Message chat = chats[index];
             return GestureDetector(
               onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => PantallaChat(
-                            user: chat.sender,
-                          ))),
+                context,
+                MaterialPageRoute(
+                  builder: (_) => PantallaChat(
+                    user: chat.sender,
+                  ),
+                ),
+              ),
               child: Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: 20,

@@ -8,7 +8,7 @@ AppBar buildAppBar(BuildContext context) {
     backgroundColor: Colors.cyan.shade700,
     title: Text(
       'Mi cuenta',
-      style: TextStyle(color: Colors.grey),
+      style: TextStyle(color: Colors.white),
     ),
   );
 }

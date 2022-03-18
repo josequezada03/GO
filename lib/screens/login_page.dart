@@ -113,6 +113,50 @@ class _LogInState extends State<LogIn> {
                       padding: EdgeInsets.all(1.0),
                     ),
                   ),
+                  const SizedBox(height: 20),
+                  GestureDetector(
+                    onTap: (() {
+                      showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (context) => Center(
+                          child: AlertDialog(
+                            title: Text('Cambiar lenguaje'),
+                            actions: [
+                              const SizedBox(height: 10),
+                              ElevatedButton(
+                                child: Text('English'),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    minimumSize: Size(10, 40),
+                                    primary: Colors.cyan.shade700),
+                              ),
+                              const SizedBox(height: 10),
+                              ElevatedButton(
+                                child: Text('Español'),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    minimumSize: Size(50, 40),
+                                    primary: Colors.cyan.shade700),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    }),
+                    child: Center(
+                      child: Image.asset(
+                        'traduc.png',
+                        height: 50,
+                        width: 50,
+                        alignment: Alignment.center,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

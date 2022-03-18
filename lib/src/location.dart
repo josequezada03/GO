@@ -1,4 +1,15 @@
-// @dart=2.9
+import 'package:flutter/material.dart';
+
+const english = Locale('en');
+const spanish = Locale('es');
+
+const supportedLocales = [
+  english,
+  spanish,
+]; 
+
+/*
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/inicio.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/mensajeria.dart';
@@ -7,23 +18,36 @@ import 'package:gp_app/screens/login_page.dart';
 import 'package:gp_app/screens/provider/todos.dart';
 import 'package:gp_app/screens/prueba.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/mi_cuenta.dart';
-import 'package:gp_app/screens/tab_bar_pages/cliente_seleccionado.dart';
-import 'package:gp_app/screens/tab_bar_pages/clientes.dart';
-import 'package:gp_app/screens/tab_bar_pages/informacion_cliente.dart';
-import 'package:gp_app/screens/tab_bar_pages/ver_mapa.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
 
-  static const String _title = 'GO app';
+ el main, justo abajo del void main
 
-  @override
+WidgetsFlutterBinding.ensureInitialized();
+await EasyLocalization.ensureInitialized();
+
+runApp(EasyLocalization(
+  supportedLocale: supportedLocales,
+  path: 'assets/translations',
+  fallbackLocale: english,
+  child: MyApp(),
+)
+);
+
+
+info.plist de la sección de ios
+
+<string>en</string>
+	<string>es</string>
+
+ @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
         create: (context) => TodosProvider(),
         child: MaterialApp(
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.localizationDelegates,
+          locale: context.locale,
           title: _title,
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
@@ -35,23 +59,8 @@ class MyApp extends StatelessWidget {
               ),
         ),
       );
+  
 }
-
-
-/*
-@override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.cyan.shade700,
-      ),
-      home: LogIn(
-          //key: UniqueKey(),
-          //title: ('Titulo prueba'),
-          ),
-    );
-  }
-
   */
+
+  

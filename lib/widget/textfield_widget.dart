@@ -42,7 +42,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           Text(widget.label,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 8,
+                fontSize: 14,
               )),
           const SizedBox(height: 8),
           TextField(

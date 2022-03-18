@@ -32,6 +32,12 @@ class _ClienteNuevoState extends State<ClienteNuevo> {
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.cyan.shade700)),
           const SizedBox(height: 12),
+          Divider(
+            height: 20,
+            thickness: 1,
+            color: Colors.cyan.shade700,
+          ),
+          const SizedBox(height: 12),
           TextFieldWidget(
             label: 'Status',
             text: '',
