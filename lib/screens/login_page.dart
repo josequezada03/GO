@@ -12,17 +12,17 @@ class LogIn extends StatefulWidget {
 class _LogInState extends State<LogIn> {
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   String name = '';
+  List<String> items = <String>[
+    'Español',
+    'English',
+    'Frances',
+  ];
+  String dropdownValue = 'Español';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-        title: Text(' '),
-        centerTitle: true,
-        backgroundColor: Colors.grey.shade800,
-        elevation: 0,
-      ),*/
-
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey.shade800,
       body: Builder(
         builder: (context) => Center(
@@ -96,7 +96,7 @@ class _LogInState extends State<LogIn> {
                           content: Text("Bienvenido"),
                         ),
                       );
-                      Future.delayed(Duration(seconds: 3), () {
+                      Future.delayed(Duration(seconds: 0), () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -114,7 +114,7 @@ class _LogInState extends State<LogIn> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  GestureDetector(
+                  /*GestureDetector(
                     onTap: (() {
                       showDialog(
                         context: context,
@@ -156,7 +156,27 @@ class _LogInState extends State<LogIn> {
                         alignment: Alignment.center,
                       ),
                     ),
-                  ),
+                  ),*/
+                  Row(
+                    children: [
+                      DropdownButton<String>(
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownValue = newValue!;
+                          });
+                        },
+                        value: dropdownValue,
+                        items: items.map<DropdownMenuItem<String>>(
+                          (String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          },
+                        ).toList(),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),

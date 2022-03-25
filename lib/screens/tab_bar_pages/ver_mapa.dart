@@ -11,8 +11,23 @@ class _VerMapaState extends State<VerMapa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.cyan),
-      body: Text('Hola'),
+      appBar: AppBar(
+        backgroundColor: Colors.cyan.shade700,
+        title: Text('Ubicación de Ruben Diaz'),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 52,
+          ),
+          Container(
+              alignment: Alignment.topCenter,
+              child: Image.asset(
+                'ubicacion.png',
+              ))
+        ],
+      ),
     );
   }
 }
