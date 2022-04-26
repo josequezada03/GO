@@ -29,6 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  syncfusion_flutter_calendar: ^20.1.48
+
+  intl: ^0.17.0
 
      
   cupertino_icons: ^1.0.0

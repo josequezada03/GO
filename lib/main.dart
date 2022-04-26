@@ -7,6 +7,8 @@ import 'package:gp_app/screens/login_page.dart';
 import 'package:gp_app/screens/provider/todos.dart';
 import 'package:gp_app/screens/prueba.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/mi_cuenta.dart';
+import 'package:gp_app/screens/tab_bar_pages/cliente_actividades/calendario.dart';
+import 'package:gp_app/screens/tab_bar_pages/cliente_actividades/formularios.dart';
 import 'package:gp_app/screens/tab_bar_pages/cliente_actividades/tomar_foto.dart';
 import 'package:gp_app/screens/tab_bar_pages/cliente_seleccionado.dart';
 import 'package:gp_app/screens/tab_bar_pages/clientes.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primaryColor: Colors.cyan.shade700,
           ),
-          home: LogIn(
+          home: homepage(
               //key: UniqueKey(),
               //title: ('Titulo prueba'),
               ),

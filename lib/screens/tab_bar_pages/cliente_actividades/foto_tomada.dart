@@ -39,10 +39,7 @@ class _FotoTomadaState extends State<FotoTomada> {
                       )),
                   TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TomarFoto()));
+                        Navigator.of(context).pop();
                       },
                       child: Text(
                         'Retomar',

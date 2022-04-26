@@ -39,7 +39,7 @@ class _LogInState extends State<LogIn> {
                       // margin: EdgeInsets.symmetric(horizontal: 110.0, vertical:110),
                       margin: EdgeInsets.fromLTRB(150, 30, 150, 0),
                       child: Image.asset(
-                        'Orient.png',
+                        'nuevo_logo.png',
                       )),
                   SizedBox(height: 35),
                   TextFormField(
@@ -96,7 +96,7 @@ class _LogInState extends State<LogIn> {
                           content: Text("Bienvenido"),
                         ),
                       );
-                      Future.delayed(Duration(seconds: 0), () {
+                      Future.delayed(Duration(seconds: 2), () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(

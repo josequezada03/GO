@@ -3,10 +3,13 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/inicio.dart';
 import 'package:gp_app/screens/homepage.dart';
+import 'package:gp_app/screens/tab_bar_pages/cliente_actividades/formularios.dart';
 import 'package:gp_app/screens/tab_bar_pages/informacion_cliente.dart';
 import 'package:gp_app/screens/tab_bar_pages/ver_mapa.dart';
 
 import '../../widget/textfield_widget.dart';
+import 'cliente_actividades/calendario.dart';
+import 'cliente_actividades/notas.dart';
 import 'cliente_actividades/tomar_foto.dart';
 import 'clientes.dart';
 
@@ -29,7 +32,37 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (context) => AlertDialog(
+                  title: Text('Iniciar visita'),
+                  actions: [
+                    const SizedBox(height: 10),
+                    ElevatedButton(
+                      child: Text('Aceptar'),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: Size(95, 40),
+                          primary: Colors.cyan.shade700),
+                    ),
+                    const SizedBox(height: 10),
+                    ElevatedButton(
+                      child: Text('Cancelar'),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: Size(50, 40),
+                          primary: Colors.cyan.shade700),
+                    ),
+                  ],
+                ),
+              );
+            },
             icon: Icon(Icons.timer_outlined),
           ),
         ],
@@ -105,7 +138,14 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
           ),
           SizedBox(height: 20),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Home(),
+                ),
+              );
+            },
             child: Row(
               children: [
                 SizedBox(width: 20),
@@ -113,7 +153,14 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
                   quarterTurns: 3,
                   child: IconButton(
                     color: Colors.cyan.shade700,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => Home(),
+                        ),
+                      );
+                    },
                     icon: Icon(
                       Icons.note,
                     ),
@@ -131,7 +178,14 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
             color: Colors.cyan.shade700,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => Formulario(),
+                ),
+              );
+            },
             child: Row(
               children: [
                 SizedBox(width: 20),
@@ -139,7 +193,14 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
                   quarterTurns: 0,
                   child: IconButton(
                     color: Colors.cyan.shade700,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => Formulario(),
+                        ),
+                      );
+                    },
                     icon: Icon(
                       Icons.notes,
                     ),
@@ -205,6 +266,41 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
                   ),
                 ),
                 Text('Tomar foto'),
+              ],
+            ),
+          ),
+          Divider(
+            indent: 25,
+            endIndent: 25,
+            height: 1,
+            thickness: 1,
+            color: Colors.cyan.shade700,
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Calendario()),
+              );
+            },
+            child: Row(
+              children: [
+                SizedBox(width: 20),
+                RotatedBox(
+                  quarterTurns: 0,
+                  child: IconButton(
+                    color: Colors.cyan.shade700,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Calendario()),
+                      );
+                    },
+                    icon: const Icon(Icons.calendar_month_sharp),
+                  ),
+                ),
+                Text('Calendario'),
               ],
             ),
           ),
