@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gp_app/screens/bottom_navigation_bar_screens/inicio.dart';
 import 'package:gp_app/screens/homepage.dart';
 import 'package:gp_app/screens/tab_bar_pages/cliente_actividades/formularios.dart';
+import 'package:gp_app/screens/tab_bar_pages/cliente_actividades/orden_de_compra/orden_de_compra.dart';
 import 'package:gp_app/screens/tab_bar_pages/informacion_cliente.dart';
 import 'package:gp_app/screens/tab_bar_pages/ver_mapa.dart';
 
@@ -289,6 +290,7 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
                 RotatedBox(
                   quarterTurns: 0,
                   child: IconButton(
+                    icon: const Icon(Icons.calendar_month_sharp),
                     color: Colors.cyan.shade700,
                     onPressed: () {
                       Navigator.push(
@@ -297,7 +299,6 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
                             builder: (context) => const Calendario()),
                       );
                     },
-                    icon: const Icon(Icons.calendar_month_sharp),
                   ),
                 ),
                 Text('Calendario'),
@@ -326,7 +327,12 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
           ),
           SizedBox(height: 5),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const OrdenDeCompra()),
+              );
+            },
             child: Row(
               children: [
                 SizedBox(width: 20),
@@ -334,7 +340,13 @@ class _ClienteSeleccionadoState extends State<ClienteSeleccionado> {
                   quarterTurns: 0,
                   child: IconButton(
                     color: Colors.cyan.shade700,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const OrdenDeCompra()),
+                      );
+                    },
                     icon: Icon(Icons.shopping_cart),
                   ),
                 ),
